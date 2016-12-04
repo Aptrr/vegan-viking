@@ -27,7 +27,7 @@ public class Player extends Object
 	// ----------------------------------
 	public Player()
 	{
-		m_Score = 10;
+		m_Score = 0;
 		m_ScoreMultiplier = 1.0f;
 		//m_Sprite = TextureManager.getInstance().createSprite("idle", 0, TextureManager.PLAYER);
 		AtlasRegion atlasRegion = TextureManager.getInstance().getAtlasRegion("idle", 0, TextureManager.PLAYER);
