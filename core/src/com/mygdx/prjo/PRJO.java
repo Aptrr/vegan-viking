@@ -28,6 +28,7 @@ public class PRJO extends ApplicationAdapter
 	private Sprite m_Background;
 	private Camera m_Camera;
 	private Viewport m_Viewport;
+	private Sprite menu;
 	// ------------------------------------
 	
 	
@@ -71,8 +72,11 @@ public class PRJO extends ApplicationAdapter
 			m_Camera.position.set(WORLD_WIDTH/2, WORLD_HEIGHT/2, 0);
 			
 			// Initialize background sprite
-			m_Background = new Sprite(new Texture("background1.png"));
+			m_Background = new Sprite(new Texture("rhino_background_sunset-8.png"));
 			m_Background.setSize(WORLD_WIDTH, WORLD_HEIGHT);
+			menu = new Sprite(new Texture("menuTest.jpg"));
+			menu.setSize(WORLD_WIDTH, WORLD_HEIGHT);
+
 		}
 		catch (Exception e)
 		{
@@ -92,7 +96,7 @@ public class PRJO extends ApplicationAdapter
 			
 			m_SpriteBatch.setProjectionMatrix(m_Camera.combined);
 			m_SpriteBatch.begin();
-			m_Background.draw(m_SpriteBatch);
+			menu.draw(m_SpriteBatch);
 			m_SpriteBatch.end();
 			
 			if (m_Game.isRunning())
@@ -136,6 +140,9 @@ public class PRJO extends ApplicationAdapter
 	// Update game state and render the game scene
 	private void handleGameLogic()
 	{
+		m_SpriteBatch.begin();
+		m_Background.draw(m_SpriteBatch);
+		m_SpriteBatch.end();
 		m_Game.update(Gdx.graphics.getDeltaTime());
 		m_Game.render();
 	}
@@ -151,7 +158,7 @@ public class PRJO extends ApplicationAdapter
 			m_ScoreFont.draw(m_SpriteBatch, "Score: " + m_Game.getScore(), Gdx.graphics.getWidth()/2 - 100, (Gdx.graphics.getHeight()/2) + 50);
 		}
 		m_InstructionFont.draw(m_SpriteBatch, "Press enter to start the game", Gdx.graphics.getWidth()/2 - 100, Gdx.graphics.getHeight()/2);
-		
+
 		m_SpriteBatch.end();
 	}
 }

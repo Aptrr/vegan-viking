@@ -103,10 +103,6 @@ public class Game
 							// Apply the power up effect to the player
 							m_Player.applyPowerUp(powerUpType);
 							break;
-						case SLOW_MOTION:
-							// Apply power up to the falling objects handler
-							m_FallingObjectsHandler.applyPowerUp(powerUpType);
-							break;
 						default:
 							break;
 					}
@@ -129,9 +125,6 @@ public class Game
 			case SCORE_MULTIPLIER:
 			case INVINCIBLE:
 				m_Player.removePowerUp(powerUpType);
-				break;
-			case SLOW_MOTION:
-				m_FallingObjectsHandler.removePowerUp(powerUpType);
 				break;
 			default:
 				break;

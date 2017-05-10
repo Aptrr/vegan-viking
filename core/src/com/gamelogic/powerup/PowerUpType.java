@@ -9,10 +9,6 @@ public enum PowerUpType
 	 */
 	INVINCIBLE,
 	/**
-	 * Slow down the speed of falling objects
-	 */
-	SLOW_MOTION,
-	/**
 	 * Multiply the score
 	 */
 	SCORE_MULTIPLIER;

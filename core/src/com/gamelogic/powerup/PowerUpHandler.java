@@ -44,9 +44,6 @@ public class PowerUpHandler
 				case INVINCIBLE:
 					m_PowerUps.add(new InvinciblePowerUp(powerUpType));
 					break;
-				case SLOW_MOTION:
-					m_PowerUps.add(new SlowMotionPowerUp(powerUpType));
-					break;
 				case SCORE_MULTIPLIER:
 					m_PowerUps.add(new ScorePowerUp(powerUpType));
 				default:
@@ -58,7 +55,6 @@ public class PowerUpHandler
 		{
 			switch (powerUpType) {
 				case INVINCIBLE:
-				case SLOW_MOTION:
 					// Reset the time if the power up is already active
 					m_PowerUps.get(powerUpActive).resetTimeActive();
 					break;

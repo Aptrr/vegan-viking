@@ -131,7 +131,7 @@ public class FallingObjectsHandler
 			m_TimeSinceLastSpawn = 0.0f;
 			if (m_SpawnInterval > MINSPAWNINTERVAL)
 			{
-				m_SpawnInterval -= 0.02f;
+				m_SpawnInterval -= 0.08f;
 			}
 		}
 	}
@@ -182,9 +182,6 @@ public class FallingObjectsHandler
 	public void applyPowerUp(PowerUpType powerUpType)
 	{
 		switch (powerUpType) {
-			case SLOW_MOTION:
-				setSpeedModifier(0.5f);
-				break;
 			default:
 				break;
 		}
@@ -193,9 +190,6 @@ public class FallingObjectsHandler
 	public void removePowerUp(PowerUpType powerUpType)
 	{
 		switch (powerUpType) {
-			case SLOW_MOTION:
-				setSpeedModifier(1.0f);
-				break;
 			default:
 				break;
 		}
